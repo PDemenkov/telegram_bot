@@ -98,8 +98,8 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         List<Notification> resultList = notList.stream()
                 .filter(e -> e.getLocalDateTime().isEqual(currentTime))
                 .collect(Collectors.toList());
-
-        SendResponse listMessage = telegramBot.execute(new SendMessage(chatId, resultList.toString()));
-
+        if (!resultList.isEmpty()) {
+            SendResponse listMessage = telegramBot.execute(new SendMessage(chatId, resultList.toString()));
+        }
     }
 }
