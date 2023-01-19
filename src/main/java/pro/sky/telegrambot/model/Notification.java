@@ -5,12 +5,13 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
+
 @Entity
 @Table(name = "Notification_table")
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id",nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "time")
@@ -80,11 +81,10 @@ public class Notification {
 
     @Override
     public String toString() {
-        return "Напоминание" +
-                "id=" + id +
-                ", Время напоминания" + localDateTime +
-                ", Задача" + messageText + '\'' +
-                ", № сообщения в чате" + chatID +
-                '}';
+        return "Напоминание " +
+                ", номер задания " + id +
+                ", Время напоминания " + localDateTime +
+                ", Задача - " + messageText +
+                ", № сообщения в чате " + chatID;
     }
 }
