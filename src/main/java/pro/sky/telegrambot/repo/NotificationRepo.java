@@ -11,7 +11,4 @@ public interface NotificationRepo extends JpaRepository<Notification,Long> {
 
     Notification findAllById(long id);
 
-//    @Query(nativeQuery = true, value = "SELECT * from notification_table")
-//    List<Notification> findALL();
-
 }
